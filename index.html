@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <button id="dark-toggle">Dark Mode</button>
+    <div id="background-overlay"></div>
+    <div id="weather-container">
+        <div id="loader"></div>
+        <div class="header-controls">
+            <select id="favorites-dropdown" title="Your Favorite Locations"></select>
+            <button id="save-favorite" title="Save Current Location"><i class="fas fa-star"></i></button>
+        </div>
+        <h2>Weather App</h2>
+        <div class="search-bar">
+            <input type="text" id="city" placeholder="Enter city name" />
+            <button id="current-location" title="Use Current Location"><i class="fas fa-crosshairs"></i></button>
+        </div>
+        <button onclick="getWeather()">Search</button>
+        
+        <!-- Standard Image Tag for the Main Icon -->
+        <img id="weather-icon" alt="Weather Icon" />
+        
+        <div class="temp-display">
+            <div id="temp-div"></div>
+            <div class="unit-toggle">
+                <span id="celsius" class="unit active">°C</span>
+                <span class="separator">/</span>
+                <span id="fahrenheit" class="unit">°F</span>
+            </div>
+        </div>
+        
+        <div id="weather-info"></div>
+        <div id="advanced-info"></div>
+        
+        <div id="hourly-heading"></div>
+        <div id="hourly-forecast"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
