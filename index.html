@@ -8,38 +8,60 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <button id="dark-toggle">Dark Mode</button>
+    <!-- Overlay must be one of the first elements -->
     <div id="background-overlay"></div>
+    
+    <!-- This is the main scrollable container -->
     <div id="weather-container">
-        <div id="loader"></div>
+        <div id="toast"></div>
+
         <div class="header-controls">
-            <select id="favorites-dropdown" title="Your Favorite Locations"></select>
+            <div id="favorites-container">
+                <button id="favorites-button">
+                    <span>Favorites</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div id="favorites-list"></div>
+            </div>
             <button id="save-favorite" title="Save Current Location"><i class="fas fa-star"></i></button>
         </div>
         <h2>Weather App</h2>
         <div class="search-bar">
-            <input type="text" id="city" placeholder="Enter city name" />
+            <input type="text" id="city" placeholder="Enter city name" autocomplete="off" />
+            <div id="city-suggestions"></div>
             <button id="current-location" title="Use Current Location"><i class="fas fa-crosshairs"></i></button>
         </div>
-        <button onclick="getWeather()">Search</button>
+        <button id="search-button" onclick="getWeather()">
+            <span id="button-text">Search</span>
+        </button>
+
+        <div id="error-message"></div>
         
-        <!-- Standard Image Tag for the Main Icon -->
-        <img id="weather-icon" alt="Weather Icon" />
-        
-        <div class="temp-display">
-            <div id="temp-div"></div>
-            <div class="unit-toggle">
-                <span id="celsius" class="unit active">°C</span>
-                <span class="separator">/</span>
-                <span id="fahrenheit" class="unit">°F</span>
+        <div id="weather-content">
+            <img id="weather-icon" alt="Weather Icon" />
+            <div id="temp-display">
+                <div id="temp-div"></div>
+                <div class="unit-toggle">
+                    <span id="celsius" class="unit active">°C</span>
+                    <span class="separator">/</span>
+                    <span id="fahrenheit" class="unit">°F</span>
+                </div>
             </div>
+            <div id="feels-like-div"></div>
+            <div id="weather-info"></div>
+            <div id="advanced-info"></div>
+            <div id="hourly-heading" class="heading"></div>
+            <div id="hourly-forecast"></div>
+            <div id="daily-heading" class="heading"></div>
+            <div id="daily-forecast"></div>
         </div>
-        
-        <div id="weather-info"></div>
-        <div id="advanced-info"></div>
-        
-        <div id="hourly-heading"></div>
-        <div id="hourly-forecast"></div>
+    </div>
+    
+
+
+    <div class="fixed-controls">
+        <button id="background-toggle" title="Toggle Photo Background"><i class="fas fa-image"></i></button>
+        <button id="dark-toggle">Dark Mode</button>
     </div>
     
     <script src="script.js"></script>
