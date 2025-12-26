@@ -11,7 +11,7 @@ const state = {
     currentUnit: 'celsius',
     currentWeather: null,
     favorites: [],
-    toastTimeout: null, // To manage the toast timer
+    toastTimeout: null, 
 };
 
 // --- DOM ELEMENTS ---
